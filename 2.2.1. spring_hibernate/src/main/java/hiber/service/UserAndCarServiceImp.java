@@ -32,6 +32,12 @@ public class UserAndCarServiceImp implements UserAndCarService {
 
    @Transactional
    @Override
+   public Car findCarById(long id) {
+      return userDao.findCarById(id);
+   }
+
+   @Transactional
+   @Override
    public void add(Car car) {
       carDao.add(car);
    }

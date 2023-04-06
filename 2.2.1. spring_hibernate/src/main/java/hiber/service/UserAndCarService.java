@@ -9,6 +9,7 @@ public interface UserAndCarService {
     // методы для users
     void add(User user);
     List<User> listUsers();
+    Car findCarById(long id);
 
     // методы для cars
     void add(Car car);
