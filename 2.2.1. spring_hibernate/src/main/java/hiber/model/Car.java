@@ -19,18 +19,17 @@ public class Car {
     public Car() {
     }
 
-    public Car(Long car_id, String model, int series) {
-        this.id = car_id;
+    public Car(String model, int series) {
         this.model = model;
         this.series = series;
     }
 
-    public Long getCar_id() {
+    public Long getId() {
         return id;
     }
 
-    public void setCar_id(Long car_id) {
-        this.id = car_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getModel() {
