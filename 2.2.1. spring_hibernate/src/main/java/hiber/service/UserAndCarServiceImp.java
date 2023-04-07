@@ -38,6 +38,12 @@ public class UserAndCarServiceImp implements UserAndCarService {
 
    @Transactional
    @Override
+   public List<User> findUsersByModelSeries(String model, int series) {
+      return carDao.findUsersByModelSeries(model, series);
+   }
+
+   @Transactional
+   @Override
    public void add(Car car) {
       carDao.add(car);
    }

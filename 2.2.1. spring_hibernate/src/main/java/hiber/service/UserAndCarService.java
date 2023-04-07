@@ -14,4 +14,6 @@ public interface UserAndCarService {
     // методы для cars
     void add(Car car);
     List<Car> listCars();
+    List<User> findUsersByModelSeries(String model, int series);
+
 }

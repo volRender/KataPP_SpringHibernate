@@ -6,12 +6,12 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
 public class UserDaoImp implements UserDao {
-
    @Autowired
    private SessionFactory sessionFactory;
 
@@ -29,7 +29,10 @@ public class UserDaoImp implements UserDao {
 
    @Override
    public Car findCarById(long id) {
-      return sessionFactory.getCurrentSession().get(Car.class, id);
+      Query query = sessionFactory.getCurrentSession()
+              .createQuery("FROM Car car WHERE car.id =:id");
+      query.setParameter("id", id);
+      return (Car) query.getSingleResult();
    }
 
 }
