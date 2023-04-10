@@ -33,13 +33,13 @@ public class UserAndCarServiceImp implements UserAndCarService {
    @Transactional
    @Override
    public Car findCarById(long id) {
-      return userDao.findCarById(id);
+      return carDao.findCarById(id);
    }
 
    @Transactional
    @Override
    public List<User> findUsersByModelSeries(String model, int series) {
-      return carDao.findUsersByModelSeries(model, series);
+      return userDao.findUsersByModelSeries(model, series);
    }
 
    @Transactional
